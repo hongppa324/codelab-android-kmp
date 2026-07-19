@@ -106,7 +106,3 @@ dependencies {
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.kotlinx.coroutines.test)
 }
-
-room {
-    schemaDirectory("$projectDir/schemas")
-}
