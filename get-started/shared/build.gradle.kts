@@ -5,6 +5,12 @@ plugins {
     alias(libs.plugins.skie)
 }
 
+skie {
+    analytics {
+        enabled.set(false)
+    }
+}
+
 kotlin {
 
     // Target declarations - add or remove as needed below. These define
