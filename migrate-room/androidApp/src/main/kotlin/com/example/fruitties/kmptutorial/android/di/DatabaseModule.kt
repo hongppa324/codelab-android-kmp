@@ -33,10 +33,7 @@ internal object DatabaseModule {
     @Provides
     @Singleton
     fun providesAppDatabase(@ApplicationContext context: Context): AppDatabase {
-        val dbFile = context.getDatabasePath("sharedfruits.db")
-        return Room.databaseBuilder<AppDatabase>(context, dbFile.absolutePath)
-            .setDriver(BundledSQLiteDriver())
-            .build()
+        return database(context)
     }
 
     @Provides
@@ -44,4 +41,11 @@ internal object DatabaseModule {
 
     @Provides
     fun providesCartDao(appDatabase: AppDatabase) = appDatabase.cartDao()
+}
+
+private fun database(context: Context): AppDatabase {
+    val dbFile = context.getDatabasePath("sharedfruits.db")
+    return Room.databaseBuilder<AppDatabase>(context, dbFile.absolutePath)
+        .setDriver(BundledSQLiteDriver())
+        .build()
 }

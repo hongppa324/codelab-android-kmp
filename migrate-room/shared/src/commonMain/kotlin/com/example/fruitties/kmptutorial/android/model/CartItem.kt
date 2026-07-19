@@ -1,5 +1,11 @@
 package com.example.fruitties.kmptutorial.android.model
 
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.ForeignKey
+import androidx.room.PrimaryKey
+import androidx.room.Relation
+
 @Entity(
     foreignKeys = [
         ForeignKey(
