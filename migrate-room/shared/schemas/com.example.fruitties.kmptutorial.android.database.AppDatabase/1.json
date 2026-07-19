@@ -49,7 +49,8 @@
             "orders": [],
             "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_Fruittie_id` ON `${TABLE_NAME}` (`id`)"
           }
-        ]
+        ],
+        "foreignKeys": []
       },
       {
         "tableName": "CartItem",
@@ -74,6 +75,7 @@
             "id"
           ]
         },
+        "indices": [],
         "foreignKeys": [
           {
             "table": "Fruittie",
@@ -89,6 +91,7 @@
         ]
       }
     ],
+    "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
       "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3a1813876a30dd7849eead4771e58793')"
